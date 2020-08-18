@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class DVDGraphics extends JPanel implements ActionListener {
+public class                DVDGraphics extends JPanel implements ActionListener {
 
     Point dvdPos = Settings.startingPos;
     BufferedImage dvdImage;
@@ -50,10 +50,12 @@ public class DVDGraphics extends JPanel implements ActionListener {
     double yMove = 1 * Settings.SPEED * (1000/Settings.FPS);
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e){
 
-        if( dvdPos.x + dvdImage.getWidth() >= Settings.resoulution.x || dvdPos.x < 0 ) {xMove = -xMove;}
-        if( dvdPos.y + dvdImage.getHeight() >= Settings.resoulution.y || dvdPos.y < 0 ) {yMove = -yMove;}
+        //Main.dvdFrame.getContentPane();
+        if(Main.dvdFrame.getContentPane() == null) System.out.println("hi"); //souf
+        if( dvdPos.x + dvdImage.getWidth() >= Main.dvdFrame.getContentPane().getWidth() || dvdPos.x < 0 ) {xMove = -xMove;}
+        if( dvdPos.y + dvdImage.getHeight() >= Main.dvdFrame.getContentPane().getHeight() || dvdPos.y < 0 ) {yMove = -yMove;}
 
         dvdPos.x += xMove;
         dvdPos.y += yMove;

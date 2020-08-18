@@ -24,7 +24,7 @@ public class DVDFrame extends JFrame {
         }
         //this.setSize(DimMax);
         //this.setMaximumSize(DimMax);
-        this.setResizable(false);
+        //this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.add(graphics);
         this.setVisible(true);
